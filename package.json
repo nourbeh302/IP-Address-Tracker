@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "dotenv": "^16.0.1",
     "leaflet": "^1.8.0",
     "vue": "^3.0.0"
   },
