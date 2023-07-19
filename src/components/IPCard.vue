@@ -29,30 +29,35 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .IPCard {
-  z-index: 4;
-  position: absolute;
   background: var(--clr-white);
   box-shadow: 0px 0px 16px var(--shadow);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 
-  bottom: -4em;
+  z-index: 4;
+  position: absolute;
+  top: 11em;
   display: flex;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 2em 3em;
   padding: 2em 5em;
 }
 
+.IPCard h3 {
+  font-weight: normal;
+  color: var(--clr-primary);
+}
+
 small {
-  color: var(--clr-grey);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clr-black);
 }
 
 @media all and (max-width: 725px) {
   .IPCard {
-    display: flex;
-    flex-direction: column;
     width: 60%;
     gap: 0.75em;
-    bottom: -13rem;
+    top: 10em;
     padding: 2em;
   }
 }

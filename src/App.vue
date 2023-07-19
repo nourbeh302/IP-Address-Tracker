@@ -3,12 +3,7 @@
     <div class="container">
       <h2>IP Address Tracker</h2>
       <div class="input-field">
-        <input
-          type="text"
-          placeholder="Enter an IP Address or press ENTER"
-          v-model="query"
-          @keyup.enter="fetchIPInfo"
-        />
+        <input type="text" placeholder="Enter an IP Address or press ENTER" v-model="query" @keyup.enter="fetchIPInfo" />
         <span class="icon">
           <img src="./assets/arrow-right.svg" alt="" srcset="" />
         </span>
@@ -73,9 +68,8 @@ export default {
 
         // Updating map view & marker
         myMap.setView([IPInfo.value.lat, IPInfo.value.lng], 13);
-        L.marker([IPInfo.value.lat, IPInfo.value.lng], {
-          icon: markerIcon,
-        }).addTo(myMap);
+        L.marker([IPInfo.value.lat, IPInfo.value.lng], { icon: markerIcon }).addTo(myMap);
+
       } catch (error) {
         console.log(error);
       }
@@ -91,14 +85,15 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
+  --clr-primary: hsl(210, 100%, 31%);
   --clr-white: hsl(180, 0%, 95%);
   --clr-black: hsl(180, 0%, 10%);
   --clr-grey: hsl(180, 0%, 35%);
   --shadow: hsla(180, 0%, 10%, 50%);
-  --ff-text: "Inter", sans-serif;
+  --ff-text: "DM Sans", sans-serif;
 }
 
 * {
@@ -125,29 +120,33 @@ export default {
   position: relative;
 }
 
-.container > h2 {
+.container>h2 {
   color: var(--clr-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .input-field {
   display: flex;
-  width: 50%;
-  max-width: 400px;
+  width: min(480px, 50%);
 }
 
-.input-field > input {
+.input-field>input {
   height: 100%;
-  padding: 1em;
+  padding-inline: 1em;
   width: 100%;
 
   outline: none;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 4px 0px 0px 4px;
   border: none;
   text-overflow: ellipsis;
+
+  font-size: 16px;
 }
 
-.input-field > span.icon {
-  border-radius: 0px 8px 8px 0px;
+.input-field>span.icon {
+  border-radius: 0px 4px 4px 0px;
   padding: 14px;
   height: 44px;
   background: var(--clr-black);
